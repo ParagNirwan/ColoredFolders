@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.IO;
 using Microsoft.Win32;  // Import for working with the Windows Registry
 
 namespace ColoredFolders
@@ -71,7 +72,7 @@ namespace ColoredFolders
                 {
                     key.SetValue("MUIVerb", "Set Folder Color", RegistryValueKind.String);
                     key.SetValue("SubCommands", "Red; Green; Blue; Purple; Pink; Orange; Teal; Grey;", RegistryValueKind.String);
-                    key.SetValue("Icon", @"C:\Users\pnirw\Documents\ColoredFolders\assets\Blue (2).ico", RegistryValueKind.String);
+                    key.SetValue("Icon", Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "assets", "Blue (2).ico"), RegistryValueKind.String);
                     key.Close();
                 }
             }
